@@ -34,3 +34,8 @@ class Supervisor(object):
         """
         for proc in self.supervisor.getAllProcessInfo():
             yield Process(self.server, proc['name'])
+
+    def reload(self):
+        """Reloads the configuration
+        """
+        return self.supervisor.reloadConfig()
